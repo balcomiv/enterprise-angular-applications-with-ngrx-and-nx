@@ -82,3 +82,9 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+
+## Duncan Hunter Links
+
+- https://duncanhunter.gitbook.io/enterprise-angular-applications-with-ngrx-and-nx/2-creating-an-nx-workspace
+
+- https://duncanhunter.gitbook.io/testing-angular/add-another-test-to-check-a-property

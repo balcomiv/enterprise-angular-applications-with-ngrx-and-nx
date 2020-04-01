@@ -7,14 +7,22 @@ import {
   AuthModule,
   authRoutes
 } from '@enterprise-angular-applications-with-ngrx-and-nx/auth';
+import { LoginComponent } from 'libs/auth/src/lib/containers/login/login.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([{ path: 'auth', children: authRoutes }], {
-      initialNavigation: 'enabled'
-    }),
+    RouterModule.forRoot(
+      [
+        { path: '', redirectTo: 'auth', pathMatch: 'full' },
+        { path: 'auth', children: authRoutes }
+        // { path: '**', component: PageNotFoundComponent }
+      ],
+      {
+        initialNavigation: 'enabled'
+      }
+    ),
     AuthModule
   ],
   providers: [],

@@ -93,3 +93,7 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 - https://duncanhunter.gitbook.io/enterprise-angular-applications-with-ngrx-and-nx/2-creating-an-nx-workspace
 
 - https://duncanhunter.gitbook.io/testing-angular/add-another-test-to-check-a-property
+
+## Custom NX
+
+- https://dev.to/wescopeland/how-to-build-custom-tools-in-a-nrwl-nx-workspace-5ej0

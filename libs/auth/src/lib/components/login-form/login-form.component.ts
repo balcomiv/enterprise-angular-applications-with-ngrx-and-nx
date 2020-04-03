@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Authenticate } from '@enterprise-angular-applications-with-ngrx-and-nx/data-models';
 
 @Component({
   selector: 'app-login-form',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+  @Output() submitLogin = new EventEmitter<Authenticate>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  login(authModel: Authenticate) {
+    this.submitLogin.emit(authModel);
   }
-
 }

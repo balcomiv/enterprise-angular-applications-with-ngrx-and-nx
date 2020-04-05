@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import { getGreeting, username, password } from '../support/app.po';
 
 describe('customer-portal', () => {
   beforeEach(() => cy.visit('/'));
@@ -8,6 +8,9 @@ describe('customer-portal', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to customer-portal!');
+    // getGreeting().contains('Welcome to customer-portal!');
+
+    username().should('be.visible');
+    password().should('be.visible');
   });
 });

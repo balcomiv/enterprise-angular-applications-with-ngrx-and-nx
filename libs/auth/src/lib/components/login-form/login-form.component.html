@@ -1,5 +1,5 @@
-<input #username placeholder="username" type="text" />
-<input #password placeholder="password" type="text" />
+<input #username id="username" placeholder="username" type="text" />
+<input #password id="password" placeholder="password" type="text" />
 <button (click)="login({ username: username.value, password: password.value })">
   Login
 </button>

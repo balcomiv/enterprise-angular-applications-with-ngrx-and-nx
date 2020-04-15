@@ -1,1 +1,1 @@
-export { Authenticate } from './authenticate';
+export { AuthenticationModel } from './authenticate';

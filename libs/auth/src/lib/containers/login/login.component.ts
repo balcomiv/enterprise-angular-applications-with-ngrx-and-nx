@@ -1,4 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  EventEmitter
+} from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { AuthenticationModel } from '@enterprise-angular-applications-with-ngrx-and-nx/data-models';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +15,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
-  login(authenticate: any) {
-    console.log('Auth: ', authenticate);
+  login(authModel: AuthenticationModel) {
+    this.authService.login(authModel).subscribe(() => {});
   }
 }

@@ -88,6 +88,9 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 - ng s --open
 - ng run customer-portal-e2e:e2e --watch
 
+## Material
+- npm install @angular/material @angular/cdk @angular/flex-layout @angular/animations
+
 ## Duncan Hunter Links
 
 - https://duncanhunter.gitbook.io/enterprise-angular-applications-with-ngrx-and-nx/2-creating-an-nx-workspace

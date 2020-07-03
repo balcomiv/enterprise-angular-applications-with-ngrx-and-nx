@@ -1,12 +1,6 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  EventEmitter
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AuthenticationModel } from '@enterprise-angular/data-models';
 import { AuthService } from '../../services/auth.service';
-import { AuthenticationModel } from '@enterprise-angular-applications-with-ngrx-and-nx/data-models';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',

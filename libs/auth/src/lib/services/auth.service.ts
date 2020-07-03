@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { AuthenticationModel } from '@enterprise-angular-applications-with-ngrx-and-nx/data-models';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { AuthenticationModel } from '@enterprise-angular/data-models';
 import { EventEmitter } from 'events';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

@@ -16,12 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@enterprise-angular-applications-with-ngrx-and-nx/auth": [
-        "libs/auth/src/index.ts"
-      ],
-      "@enterprise-angular-applications-with-ngrx-and-nx/data-models": [
-        "libs/data-models/index.ts"
-      ]
+      "@enterprise-angular/auth": ["libs/auth/src/index.ts"],
+      "@enterprise-angular/data-models": ["libs/data-models/index.ts"],
+      "@enterprise-angular/material": ["libs/material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

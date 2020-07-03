@@ -49,7 +49,7 @@ Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are sharable across libraries and applications. They can be imported from `@enterprise-angular-applications-with-ngrx-and-nx/mylib`.
+Libraries are sharable across libraries and applications. They can be imported from `@enterprise-angular/mylib`.
 
 ## Development server
 
@@ -89,15 +89,22 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 - ng run customer-portal-e2e:e2e --watch
 
 ## Material
+
 - npm install @angular/material @angular/cdk @angular/flex-layout @angular/animations
+
+## FX Flex
+
+- https://www.angularjswiki.com/flexlayout/basics/#angular-flex-layout-responsive-api
+
+- https://tburleson-layouts-demos.firebaseapp.com/#/docs
 
 ## Duncan Hunter Links
 
-- https://duncanhunter.gitbook.io/enterprise-angular-applications-with-ngrx-and-nx/2-creating-an-nx-workspace
+- https://duncanhunter.gitbook.io/enterprise-angular/2-creating-an-nx-workspace
 
 - https://duncanhunter.gitbook.io/testing-angular/add-another-test-to-check-a-property
 
-- https://github.com/duncanhunter/Demo-App-Enterprise-Angular-applications-with-ngrx-and-nx
+- https://github.com/duncanhunter/Demo-App-enterprise-angular
 
 ## Custom NX
 

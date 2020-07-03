@@ -1,5 +1,5 @@
 {
-  "npmScope": "enterprise-angular-applications-with-ngrx-and-nx",
+  "npmScope": "enterprise-angular",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": {
@@ -19,6 +19,9 @@
       "implicitDependencies": ["customer-portal"]
     },
     "auth": {
+      "tags": []
+    },
+    "material": {
       "tags": []
     }
   }

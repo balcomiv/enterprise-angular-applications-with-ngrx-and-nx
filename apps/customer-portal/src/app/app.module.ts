@@ -1,28 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Added
 import { RouterModule } from '@angular/router';
-import {
-  AuthModule,
-  authRoutes
-} from '@enterprise-angular-applications-with-ngrx-and-nx/auth';
-import { LoginComponent } from 'libs/auth/src/lib/containers/login/login.component';
+import { AuthModule, authRoutes } from '@enterprise-angular/auth';
+import { AppComponent } from './app.component';
+
+//#region Routing
+const rootRouteModule = RouterModule.forRoot(
+  [
+    { path: '', redirectTo: 'auth', pathMatch: 'full' },
+    { path: 'auth', children: authRoutes }
+    // { path: '**', component: PageNotFoundComponent }
+  ],
+  {
+    initialNavigation: 'enabled'
+  }
+);
+//#endregion
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      [
-        { path: '', redirectTo: 'auth', pathMatch: 'full' },
-        { path: 'auth', children: authRoutes }
-        // { path: '**', component: PageNotFoundComponent }
-      ],
-      {
-        initialNavigation: 'enabled'
-      }
-    ),
+    BrowserAnimationsModule,
+    rootRouteModule,
     AuthModule
   ],
   providers: [],

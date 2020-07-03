@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AuthenticationModel } from '@enterprise-angular-applications-with-ngrx-and-nx/data-models';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthenticationModel } from '@enterprise-angular/data-models';
 
 @Component({
   selector: 'app-login-form',

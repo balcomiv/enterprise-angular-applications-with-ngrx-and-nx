@@ -1,4 +1,20 @@
 <mat-toolbar color="primary" fxLayout="row">
   <span>Customer Portal</span>
+
+  <!-- Right Nav -->
+  <div class="right-nav">
+    <!-- User Logged In -->
+    <span *ngIf="user$ | async as user; else loginBlock">
+      <button mat-button>{{ user.username }}</button>
+      <button mat-button>Products</button>
+      <button mat-button>Logout</button>
+    </span>
+    <!-- User Not Logged In -->
+    <ng-template #loginBlock>
+      <span>
+        <span mat-button [routerLink]="['/auth/login']">Login</span>
+      </span>
+    </ng-template>
+  </div>
 </mat-toolbar>
 <ng-content></ng-content>

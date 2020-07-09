@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Added
 import { RouterModule } from '@angular/router';
-import { AuthModule, authRoutes } from '@enterprise-angular/auth';
+import { AuthGuard, AuthModule, authRoutes } from '@enterprise-angular/auth';
 import { LayoutModule } from '@enterprise-angular/layout';
 import {} from '@enterprise-angular/products';
 import { AppComponent } from './app.component';
@@ -14,8 +14,11 @@ const rootRouteModule = RouterModule.forRoot(
     { path: 'auth', children: authRoutes },
     {
       path: 'products',
-      loadChildren: '@enterprise-angular/products#ProductsModule'
-      // canActivate: [AuthGuard]
+      loadChildren: () =>
+        import('@enterprise-angular/products').then(
+          module => module.ProductsModule
+        ),
+      canActivate: [AuthGuard]
     }
     // { path: '**', component: PageNotFoundComponent }
   ],

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationModel } from '@enterprise-angular/data-models';
 
 @Component({
@@ -6,14 +7,18 @@ import { AuthenticationModel } from '@enterprise-angular/data-models';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
   @Output() submitLogin = new EventEmitter<AuthenticationModel>();
 
-  constructor() {}
+  loginForm = new FormGroup({
+    userName: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  });
 
-  ngOnInit(): void {}
-
-  login(authModel: AuthenticationModel) {
-    this.submitLogin.emit(authModel);
+  login() {
+    this.submitLogin.emit({
+      username: this.loginForm.value.userName,
+      password: this.loginForm.value.password
+    });
   }
 }

@@ -4,12 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { RouterModule } from '@angular/router';
 import { AuthModule, authRoutes } from '@enterprise-angular/auth';
 import { LayoutModule } from '@enterprise-angular/layout';
+import {} from '@enterprise-angular/products';
 import { AppComponent } from './app.component';
 
 //#region Routing
 const rootRouteModule = RouterModule.forRoot(
   [
-    { path: '', redirectTo: 'auth', pathMatch: 'full' },
+    { path: '', redirectTo: 'products', pathMatch: 'full' },
     { path: 'auth', children: authRoutes },
     {
       path: 'products',

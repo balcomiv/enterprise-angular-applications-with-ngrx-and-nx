@@ -6,13 +6,24 @@
     <!-- User Logged In -->
     <span *ngIf="user$ | async as user; else loginBlock">
       <button mat-button>{{ user.username }}</button>
-      <button mat-button>Products</button>
+      <button
+        mat-button
+        [routerLink]="['/products']"
+        routerLinkActive="router-link-active"
+      >
+        Products
+      </button>
       <button mat-button>Logout</button>
     </span>
     <!-- User Not Logged In -->
     <ng-template #loginBlock>
       <span>
-        <span mat-button [routerLink]="['/auth/login']">Login</span>
+        <span
+          mat-button
+          [routerLink]="['/auth/login']"
+          routerLinkActive="router-link-active"
+          >Login</span
+        >
       </span>
     </ng-template>
   </div>

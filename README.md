@@ -104,7 +104,7 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 - https://duncanhunter.gitbook.io/testing-angular/add-another-test-to-check-a-property
 
-- https://github.com/duncanhunter/Demo-App-enterprise-angular
+- https://github.com/duncanhunter/Demo-App-NDC-Oslo-2018-Enterprise-Angular-applications-with-ngrx-and-nx/blob/master/apps/customer-portal/src/app/app.component.html
 
 ## Custom NX
 

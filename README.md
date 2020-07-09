@@ -87,6 +87,7 @@ Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
 - ng s --open
 - ng run customer-portal-e2e:e2e --watch
+- ng generate @nrwl/angular:library --name=products --style=scss --lazy --parentModule=apps/customer-portal/src/app/app.module.ts --routing --no-interactive --dry-run
 
 ## Material
 

@@ -10,7 +10,12 @@ import { AppComponent } from './app.component';
 const rootRouteModule = RouterModule.forRoot(
   [
     { path: '', redirectTo: 'auth', pathMatch: 'full' },
-    { path: 'auth', children: authRoutes }
+    { path: 'auth', children: authRoutes },
+    {
+      path: 'products',
+      loadChildren: '@enterprise-angular/products#ProductsModule'
+      // canActivate: [AuthGuard]
+    }
     // { path: '**', component: PageNotFoundComponent }
   ],
   {

@@ -14,11 +14,26 @@ export class AuthService {
 
   private unsubscribe = new EventEmitter();
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.userSubeject$.next(JSON.parse(user));
+    }
+  }
 
   login(authModel: AuthenticationModel): Observable<any> {
     return this.httpClient
       .post<User>('http://localhost:3000/login', authModel)
-      .pipe(tap(user => this.userSubeject$.next(user)));
+      .pipe(
+        tap(user => {
+          this.userSubeject$.next(user);
+          localStorage.setItem('user', JSON.stringify(user));
+        })
+      );
+  }
+
+  logout(): void {
+    this.userSubeject$.next(null);
+    localStorage.removeItem('user');
   }
 }

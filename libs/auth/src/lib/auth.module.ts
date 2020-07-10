@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { MaterialModule } from '@enterprise-angular/material';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { LoginComponent } from './containers/login/login.component';
+import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 
 export const authRoutes: Route[] = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,13 @@ export const authRoutes: Route[] = [
     ReactiveFormsModule
   ],
   declarations: [LoginComponent, LoginFormComponent],
-  exports: [LoginComponent]
+  exports: [LoginComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ]
 })
 export class AuthModule {}
